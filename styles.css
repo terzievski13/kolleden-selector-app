@@ -107,14 +107,30 @@ button:hover {
     animation: bounceSelection 0.4s ease;
 }
 
+/*
+ * Стил за падащия списък на месеците. Той е
+ * по-широк и с полупрозрачен фон, съответстващ на
+ * цветовата палитра на приложението. При по-малки
+ * екрани ширината ще бъде 100%.
+ */
 select {
     margin-top: 10px;
-    padding: 8px;
-    border-radius: 4px;
+    padding: 10px 12px;
+    border-radius: 6px;
     border: none;
     font-size: 1rem;
     color: #333;
-    width: 200px;
+    width: 260px;
+    background-color: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 600px) {
+    select {
+        width: 100%;
+    }
 }
 
 /*
