@@ -15,17 +15,29 @@ body {
     background-size: auto;
     background-position: center;
     overflow-x: hidden;
+    /* Add top padding to accommodate the fixed progress bar */
+    padding-top: 70px;
 }
 
 /*
  * Progress indicator
  * A horizontal row of small circles to represent the current step in the experience.
  */
+/*
+ * Прогрес барът е фиксиран в горната част на страницата
+ * и е центриран по хоризонтала. Z-index гарантира, че остава
+ * над останалите елементи. Добавяме разстояние от 10px отгоре.
+ */
 .progress-indicator {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 16px;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    margin: 0;
 }
 
 .progress-indicator .step {
