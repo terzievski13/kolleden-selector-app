@@ -30,6 +30,10 @@ h1, h2 {
     /* Positioning above the snowflakes layer */
     position: relative;
     z-index: 2;
+    /* Constrain the container width so it doesn't overflow on small screens */
+    max-width: 90%;
+    box-sizing: border-box;
+    margin: 20px;
 }
 
 button {
@@ -147,5 +151,35 @@ select {
     }
     100% {
         transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    body {
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+    .container {
+        max-width: 95%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+    h1, h2 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+    #hutList li {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+    select {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+    }
+    .hut-name {
+        font-size: 1rem;
     }
 }
