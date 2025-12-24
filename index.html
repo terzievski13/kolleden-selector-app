@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Честита Коледа, Мамо!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+    <div class="container">
+        <h1>Честита Коледа, Мамо!</h1>
+        <button onclick="goWish()">кликни тук!</button>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        // Register the service worker so the app works offline
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+        function goWish() {
+            window.location.href = 'wish.html';
+        }
+    </script>
+</body>
+</html>

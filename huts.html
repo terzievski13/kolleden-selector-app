@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избор на хижа</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Избери хижа:</h2>
+        <ul id="hutList"></ul>
+        <h2>Избери месец:</h2>
+        <select id="monthSelect">
+            <option disabled selected>Изберете месец</option>
+            <option>Януари</option>
+            <option>Февруари</option>
+            <option>Март</option>
+            <option>Април</option>
+            <option>Май</option>
+            <option>Юни</option>
+            <option>Юли</option>
+            <option>Август</option>
+            <option>Септември</option>
+            <option>Октомври</option>
+            <option>Ноември</option>
+            <option>Декември</option>
+        </select>
+        <button id="finalButton">кликни тук!</button>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        const hutListEl = document.getElementById('hutList');
+        HUTS.forEach((hut) => {
+            const li = document.createElement('li');
+            li.textContent = hut;
+            li.onclick = () => selectHut(hut);
+            hutListEl.appendChild(li);
+        });
+        document.getElementById('finalButton').addEventListener('click', () => {
+            const selectedMonth = document.getElementById('monthSelect').value;
+            if (!selectedHut) {
+                alert('Моля, изберете хижа.');
+                return;
+            }
+            if (selectedMonth === 'Изберете месец') {
+                alert('Моля, изберете месец.');
+                return;
+            }
+            localStorage.setItem('selectedHut', selectedHut);
+            localStorage.setItem('selectedMonth', selectedMonth);
+            window.location.href = 'done.html';
+        });
+    </script>
+</body>
+</html>

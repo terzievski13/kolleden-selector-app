@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Готово</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Дядо Коледа ще обработи желанието Ви!</h2>
+        <p id="selection"></p>
+    </div>
+    <script>
+        const hut = localStorage.getItem('selectedHut');
+        const month = localStorage.getItem('selectedMonth');
+        if (hut && month) {
+            document.getElementById('selection').innerText = 'Вие избрахте ' + hut + ' за ' + month + '.';
+        }
+    </script>
+</body>
+</html>
