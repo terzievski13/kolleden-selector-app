@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Progress indicator showing the final step (4 of 4) -->
+    <div class="progress-indicator">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step active"></span>
+    </div>
     <div class="container">
         <h2>Дядо Коледа ще обработи желанието Ви!</h2>
         <p id="selection"></p>
@@ -17,6 +24,24 @@
         if (hut && month) {
             document.getElementById('selection').innerText = 'Вие избрахте ' + hut + ' за ' + month + '.';
         }
+        // Confetti celebration on final page
+        function initConfetti() {
+            const confContainer = document.createElement('div');
+            confContainer.className = 'confetti-container';
+            document.body.appendChild(confContainer);
+            const confCount = 80;
+            for (let i = 0; i < confCount; i++) {
+                const conf = document.createElement('div');
+                conf.className = 'confetti';
+                conf.style.left = `${Math.random() * 100}%`;
+                // Random bright color using HSL
+                conf.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                conf.style.animationDelay = `${Math.random() * 3}s`;
+                conf.style.animationDuration = `${3 + Math.random() * 2}s`;
+                confContainer.appendChild(conf);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', initConfetti);
     </script>
 </body>
 </html>

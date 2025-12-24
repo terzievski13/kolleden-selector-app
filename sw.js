@@ -1,6 +1,6 @@
 // Increment the cache name to bust the old cache whenever we deploy a new version of the app.
 // Increment the cache name to bust the old cache whenever we deploy a new version of the app.
-const CACHE_NAME = 'kolleden-selector-cache-v6';
+const CACHE_NAME = 'kolleden-selector-cache-v7';
 // List all of the assets that should be cached for offline use. When updating
 // the app or adding new assets (like images), be sure to include them here so
 // the service worker will cache them on install.

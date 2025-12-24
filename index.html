@@ -8,9 +8,17 @@
     <link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
+    <!-- Progress indicator showing the current step (1 of 4) -->
+    <div class="progress-indicator">
+        <span class="step active"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+    </div>
     <div class="container">
         <h1>Честита Коледа, Мамо!</h1>
-        <button onclick="goWish()">Натистни тук, за да разбереш какъв е подаръкът ти!</button>
+        <!-- Updated button text to a simple call-to-action -->
+        <button onclick="goWish()">Натисни тук!</button>
     </div>
     <script src="app.js"></script>
     <script>

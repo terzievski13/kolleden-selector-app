@@ -7,9 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Progress indicator showing the current step (3 of 4) -->
+    <div class="progress-indicator">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step active"></span>
+        <span class="step"></span>
+    </div>
     <div class="container">
         <h2>Избери хижа:</h2>
         <ul id="hutList" class="hut-grid"></ul>
+        <!-- Description for the selected hut will appear here -->
+        <p id="hutDescription" class="hut-description"></p>
         <h2>Избери месец:</h2>
         <select id="monthSelect">
             <option disabled selected>Изберете месец</option>
@@ -31,6 +40,7 @@
     <script src="app.js"></script>
     <script>
         const hutListEl = document.getElementById('hutList');
+        const descriptionEl = document.getElementById('hutDescription');
         HUTS.forEach((hut) => {
             const li = document.createElement('li');
             li.dataset.hutName = hut.name;
@@ -38,7 +48,13 @@
                 <img src="${hut.img}" alt="${hut.name}" class="hut-img">
                 <span class="hut-name">${hut.name}</span>
             `;
-            li.onclick = () => selectHut(hut.name);
+            // When a hut is clicked, mark it selected and display its description
+            li.onclick = () => {
+                selectHut(hut.name);
+                if (descriptionEl) {
+                    descriptionEl.innerText = hut.description || '';
+                }
+            };
             hutListEl.appendChild(li);
         });
         document.getElementById('finalButton').addEventListener('click', () => {
