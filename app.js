@@ -5,24 +5,24 @@ const WISH_TEXT = `Скъпа мамо, пожелавам ти незабрав
 // Списък с хижи, които може да посетите, заедно със снимка за визуализация
 const HUTS = [
   {
-    name: 'Хижа Плевен',
-    img: 'hut1.png'
+    name: 'Безбог',
+    img: 'bezbog.jpeg'
   },
   {
-    name: 'Хижа Рай',
-    img: 'hut2.png'
+    name: 'Мальовица',
+    img: 'malyovitsa.jpeg'
   },
   {
-    name: 'Хижа Безбог',
-    img: 'hut3.png'
+    name: 'Рилски езера',
+    img: 'rilski-ezera.jpeg'
   },
   {
-    name: 'Хижа Мальовица',
-    img: 'hut4.png'
+    name: 'Рай',
+    img: 'rai.jpeg'
   },
   {
-    name: 'Хижа Рилски езера',
-    img: 'hut5.png'
+    name: 'Плевен',
+    img: 'pleven.jpeg'
   }
 ];
 

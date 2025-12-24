@@ -1,5 +1,6 @@
 // Increment the cache name to bust the old cache whenever we deploy a new version of the app.
-const CACHE_NAME = 'kolleden-selector-cache-v2';
+// Increment the cache name to bust the old cache whenever we deploy a new version of the app.
+const CACHE_NAME = 'kolleden-selector-cache-v3';
 // List all of the assets that should be cached for offline use. When updating
 // the app or adding new assets (like images), be sure to include them here so
 // the service worker will cache them on install.
@@ -13,11 +14,11 @@ const FILES_TO_CACHE = [
   '/app.js',
   '/manifest.webmanifest',
   // Images for the huts; adding these ensures they are available offline.
-  '/hut1.png',
-  '/hut2.png',
-  '/hut3.png',
-  '/hut4.png',
-  '/hut5.png'
+  '/bezbog.jpeg',
+  '/malyovitsa.jpeg',
+  '/rilski-ezera.jpeg',
+  '/rai.jpeg',
+  '/pleven.jpeg'
 ];
 
 self.addEventListener('install', (event) => {
