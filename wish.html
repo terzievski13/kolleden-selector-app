@@ -14,6 +14,13 @@
     <script src="app.js"></script>
     <script>
         document.getElementById('wishText').innerText = WISH_TEXT;
+        // If the previous page requested the song to play, play it on load.
+        if (sessionStorage.getItem('playSong') === 'true') {
+            if (typeof playSong === 'function') {
+                playSong();
+            }
+            sessionStorage.removeItem('playSong');
+        }
         function goHuts() {
             window.location.href = 'huts.html';
         }

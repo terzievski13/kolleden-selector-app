@@ -9,7 +9,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url('https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    /* A festive gradient background for a Christmas feel */
+    background: linear-gradient(to bottom right, #8a0202, #125d18);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -26,6 +27,9 @@ h1, h2 {
     border-radius: 8px;
     animation: fadeIn 1s ease-out forwards;
     opacity: 0;
+    /* Positioning above the snowflakes layer */
+    position: relative;
+    z-index: 2;
 }
 
 button {
@@ -105,5 +109,43 @@ select {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/*
+ * Snowfall effect
+ * A container for all snowflakes is fixed to the viewport and does not
+ * interfere with pointer events. Each snowflake is an absolutely positioned
+ * circle that falls from the top of the screen to the bottom. The opacity
+ * is set to 0.6 to allow the background to show through.
+ */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
     }
 }

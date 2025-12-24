@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1>Честита Коледа, Мамо!</h1>
-        <button onclick="goWish()">кликни тук!</button>
+        <button onclick="goWish()">Натистни тук, за да разбереш какъв е подаръкът ти!</button>
     </div>
     <script src="app.js"></script>
     <script>
@@ -19,6 +19,13 @@
             navigator.serviceWorker.register('sw.js');
         }
         function goWish() {
+            // Set a flag to indicate that the song should play on the next page
+            sessionStorage.setItem('playSong', 'true');
+            // Start the song if playSong is defined (this call must come from a user gesture)
+            if (typeof playSong === 'function') {
+                playSong();
+            }
+            // Navigate to the wish page
             window.location.href = 'wish.html';
         }
     </script>
